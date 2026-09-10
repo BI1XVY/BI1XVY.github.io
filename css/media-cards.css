@@ -1,0 +1,86 @@
+/* 游戏 / 影视清单卡片 */
+.media-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem 0.85rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.media-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card-bg, rgba(127, 127, 127, 0.08));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.media-card-cover {
+  aspect-ratio: 2 / 3;
+  background: rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.media-card-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-card-cover--empty {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(127, 127, 127, 0.12),
+    rgba(127, 127, 127, 0.12) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+.media-card-body {
+  padding: 0.55rem 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.media-card-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.media-card-title:hover {
+  color: var(--text-highlight-color, #49b1f5);
+}
+
+.media-card-status {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background: rgba(73, 177, 245, 0.15);
+  color: var(--text-highlight-color, #49b1f5);
+}
+
+.media-card-note {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  opacity: 0.78;
+}
+
+.media-list-empty {
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .media-list {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
