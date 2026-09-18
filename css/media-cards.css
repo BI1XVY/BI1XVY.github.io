@@ -1,7 +1,8 @@
 /* 游戏 / 影视清单卡片 */
 .media-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  /* 横版封面要更宽的卡片，否则图只剩一条；160px 卡片对应约 160x75 的图 */
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 1rem 0.85rem;
   margin: 1.25rem 0 1.75rem;
 }
@@ -17,7 +18,9 @@
 }
 
 .media-card-cover {
-  aspect-ratio: 2 / 3;
+  /* Steam 封面统一用 appdetails 的 header_image：460x215 横版。
+     卡片框与它同比，配 object-fit: cover 才不会裁切或拉伸。 */
+  aspect-ratio: 460 / 215;
   background: rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
@@ -90,6 +93,6 @@ a.media-card-title:hover {
 
 @media (min-width: 768px) {
   .media-list {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
