@@ -30,6 +30,9 @@
 }
 
 .media-card-cover--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: repeating-linear-gradient(
     -45deg,
     rgba(127, 127, 127, 0.12),
@@ -37,6 +40,12 @@
     transparent 8px,
     transparent 16px
   );
+}
+
+.media-card-cover--empty span {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  opacity: 0.72;
 }
 
 .media-card-body {
